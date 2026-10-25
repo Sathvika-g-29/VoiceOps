@@ -1,0 +1,29 @@
+VoiceOps Capstone Project
+ZentroMart Customer Support Voice Agent
+
+1. Problem Statement
+Build a voice-based customer support agent that answers ZentroMart customer queries using company policies and order data.
+
+2. System Architecture
+Customer Audio → Gnani STT → VoiceOps Agent → Retrieval / Support Tools → Gemini LLM → Gnani TTS → Audio Reply
+
+3. Technologies Used
+Python, Gemini API, Gnani Vachana SDK, Sentence Transformers, NumPy, CSV, and a local knowledge base.
+
+4. Retrieval-Augmented Generation
+The system retrieves relevant sections from company policy documents using sentence embeddings and cosine similarity. Retrieved evidence is supplied to the LLM to generate grounded answers with section citations.
+
+5. Conversation and Security
+Order details require verification using the last four registered phone digits or six-digit delivery pincode. The system supports order lookup and support-ticket creation.
+
+6. Voice Integration
+Gnani Speech-to-Text transcribes customer audio. The agent processes the query and Gnani Text-to-Speech generates the spoken reply.
+
+7. Evaluation
+The initial automated evaluation encountered API errors and rate limits. The preliminary phrase-check results are inconclusive and should not be treated as verified accuracy measurements.
+
+8. Limitations and Future Work
+Improve evaluation reliability, test multi-turn scenarios systematically, review retrieval quality, and strengthen error handling.
+
+9. Conclusion
+The prototype demonstrates a voice-based customer support workflow combining policy retrieval, LLM-generated answers, order verification, support tools, and speech synthesis.
